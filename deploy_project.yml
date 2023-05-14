@@ -1,0 +1,15 @@
+---
+- name: deployment of cloud instances
+  hosts: localhost
+  collections:
+   - cloud.terraform
+
+  vars:
+   project_dir: /home/runner/video
+
+  tasks:
+
+    - name: Basic deploy of a service
+      cloud.terraform.terraform:
+       project_path: '{{ project_dir }}'
+       state: present
