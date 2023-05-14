@@ -5,9 +5,20 @@
    - cloud.terraform
 
   vars:
-   project_dir: /home/runner/video
+   project_dir: /tmp/deployment/project
 
   tasks:
+
+#    - name: Setup project locations
+#      file:
+#       path: /tmp/deployment
+#       state: directory
+   
+#    - name: Grab instance info
+#      ansible.builtin.git:
+#       repo: https://github.com/nmartins0611/terraform_ansible.git
+#       dest: /tmp/deployment
+
 
     - name: Basic deploy of a service
       cloud.terraform.terraform:
