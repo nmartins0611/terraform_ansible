@@ -9,15 +9,16 @@
 
   tasks:
 
-#    - name: Setup project locations
-#      file:
-#       path: /tmp/deployment
-#       state: directory
-   
-#    - name: Grab instance info
-#      ansible.builtin.git:
-#       repo: https://github.com/nmartins0611/terraform_ansible.git
-#       dest: /tmp/deployment
+    - name: Setup project locations
+      file:
+       path: /tmp/deployment
+       state: directory
+       mode: '755'
+     
+    - name: Grab instance info
+      ansible.builtin.git:
+       repo: https://github.com/nmartins0611/terraform_ansible.git
+       dest: /tmp/deployment
 
 
     - name: Basic deploy of a service
